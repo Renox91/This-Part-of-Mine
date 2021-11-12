@@ -374,7 +374,8 @@ MonoBehaviour:
   isJumping: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  checkGroundDistance: 0
 --- !u!4 &4214129895239966117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
