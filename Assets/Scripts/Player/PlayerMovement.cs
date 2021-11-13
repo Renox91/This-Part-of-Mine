@@ -8,10 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jump;
     [SerializeField] private bool isJumping = false;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float checkGroundDistance, deltaX;
     private AnimationManager animationManager;
     private SpriteRenderer spriteRenderer;
-
+    private new BoxCollider2D collider;
 
     [SerializeField] private static bool canMove = true;
     public static bool CanMove
@@ -38,12 +37,13 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animationManager = GetComponent<AnimationManager>();
         rb = GetComponent<Rigidbody2D>();
+        collider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        checkGroundRotation();
+        CheckGroundRotation();
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
         if (rb.velocity.x < 0)
         {
@@ -65,11 +65,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void checkGroundRotation()
+    private void CheckGroundRotation()
     {
+        var bounds = collider.bounds;
+        var checkGroundDistance = Mathf.Abs(bounds.min.y - bounds.center.y) + 0.1f;
+
         // Cast a ray straight down.
-        RaycastHit2D hit1 = Physics2D.Raycast(new Vector3(transform.position.x - deltaX, transform.position.y, transform.position.z), Vector2.down, checkGroundDistance, groundLayer);
-        RaycastHit2D hit2 = Physics2D.Raycast(new Vector3(transform.position.x + deltaX, transform.position.y, transform.position.z), Vector2.down, checkGroundDistance, groundLayer);
+        RaycastHit2D hit1 = Physics2D.Raycast(new Vector3(bounds.min.x, bounds.center.y, 0f), Vector2.down, checkGroundDistance, groundLayer);
+        RaycastHit2D hit2 = Physics2D.Raycast(new Vector3(bounds.max.x, bounds.center.y, 0f), Vector2.down, checkGroundDistance, groundLayer);
+
         // If it hits something...
         if (hit1.collider != null)
         {
