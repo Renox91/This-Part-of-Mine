@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CircularPlatform : MonoBehaviour
 {
+    [SerializeField] private float temporalOffset;
+    private bool canMove;
     [SerializeField] private Transform rotationCenter;
     [SerializeField] private float rotationRadius = 2f;
     private float angularSpeed;
@@ -13,10 +15,15 @@ public class CircularPlatform : MonoBehaviour
     private float posX, posY, angle = 0.0f;
     private void Start()
     {
+        Invoke("Init", temporalOffset);
         miAngle = (startAngle + endAngle) / 2;
     }
     private void Update()
     {
+        if(!canMove)
+        {
+            return;
+        }
         posX = rotationCenter.position.x + Mathf.Cos(angle) * rotationRadius;
         posY = rotationCenter.position.y + Mathf.Sin(angle) * rotationRadius;
         transform.position = new Vector2(posX, posY);
@@ -33,5 +40,8 @@ public class CircularPlatform : MonoBehaviour
             angle = -endAngle;
         }
     }
-
+    private void Init()
+    {
+        canMove = true;
+    }
 }

@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jump;
     [SerializeField] private bool isJumping = false;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float checkGroundDistance;
+    [SerializeField] private float checkGroundDistance, deltaX;
+    private AnimationManager animationManager;
+    private SpriteRenderer spriteRenderer;
 
 
     [SerializeField] private static bool canMove = true;
@@ -33,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        checkGroundDistance = transform.localScale.y/1.9f;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animationManager = GetComponent<AnimationManager>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -42,49 +45,47 @@ public class PlayerMovement : MonoBehaviour
     {
         checkGroundRotation();
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
+        if (rb.velocity.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (rb.velocity.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
     }
 
     public void Jump()
     {
         if(!isJumping)
+        {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
-    }
-
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Stone"))
-        {
-            isJumping = false;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Stone"))
-        {
             isJumping = true;
         }
-    }*/
+    }
 
     private void checkGroundRotation()
     {
         // Cast a ray straight down.
-        Vector3 deltaX = new Vector3(transform.localScale.x / 2,0,0);
-        RaycastHit2D hit1 = Physics2D.Raycast(transform.position - deltaX, Vector2.down, checkGroundDistance, groundLayer);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + deltaX, Vector2.down, checkGroundDistance, groundLayer);
+        RaycastHit2D hit1 = Physics2D.Raycast(new Vector3(transform.position.x - deltaX, transform.position.y, transform.position.z), Vector2.down, checkGroundDistance, groundLayer);
+        RaycastHit2D hit2 = Physics2D.Raycast(new Vector3(transform.position.x + deltaX, transform.position.y, transform.position.z), Vector2.down, checkGroundDistance, groundLayer);
         // If it hits something...
         if (hit1.collider != null)
         {
+            animationManager.SetJump(false);
             isJumping = false;
             //transform.rotation = Quaternion.EulerAngles(0, 0, (Mathf.Atan2(hit1.normal.y, hit1.normal.x) * Mathf.Rad2Deg));
         }
         else if (hit2.collider != null)
         {
             isJumping = false;
+            animationManager.SetJump(false);
             //transform.rotation = Quaternion.EulerAngles(0, 0, (Mathf.Atan2(hit2.normal.y, hit2.normal.x) * Mathf.Rad2Deg));
         }
         else
         {
+            animationManager.SetJump(true);
             isJumping = true;
         }
 

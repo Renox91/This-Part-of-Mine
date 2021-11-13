@@ -17,6 +17,6 @@ public class Parallax : MonoBehaviour
         Vector3 deltaMove = cameraTransform.position - lastCamPos;
         deltaMove *= parallaxEffect;
         lastCamPos = cameraTransform.position;
-        transform.position = new Vector3(deltaMove.x * parallaxEffect.x, deltaMove.y * parallaxEffect.y, transform.position.y);
+        transform.position = new Vector3(transform.position.x  + deltaMove.x * parallaxEffect.x, transform.position.y + deltaMove.y * parallaxEffect.y, transform.position.y);
     }
 }
