@@ -62,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
         if (hit.collider != null)
         {
             //transform.rotation = Quaternion.EulerAngles(0, 0, Mathf.Atan2(hit.normal.y, hit.normal.x));
-            Debug.Log("Raycast");
         }
     }
 }
