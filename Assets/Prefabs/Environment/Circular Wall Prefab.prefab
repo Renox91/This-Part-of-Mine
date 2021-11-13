@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 4033120854447187255}
   - component: {fileID: 267209150393606528}
   - component: {fileID: 777645355508084455}
+  - component: {fileID: 3385920022491725966}
   m_Layer: 6
   m_Name: Circular Wall
   m_TagString: Ground
@@ -149,9 +150,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2546390504595508928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circular Wall Prefab
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,3 +247,17 @@ MonoBehaviour:
   angularSpeedMultiply: 2
   startAngle: 0
   endAngle: 3.14
+--- !u!114 &3385920022491725966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6807573229117192220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0978f6100462e4c41a5e47ae3fbe202a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Collider: {fileID: 0}
+  m_MaxDistance: 0

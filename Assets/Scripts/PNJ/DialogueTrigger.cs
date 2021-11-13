@@ -44,5 +44,6 @@ public class DialogueTrigger : MonoBehaviour
     private void TriggerDialogue()
     {
         // Code pour trigger la boite de dialogue avec les paramètres
+        DialogueManager.Instance.StartDialogue(dialogue);
     }
 }
