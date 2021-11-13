@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool CanClimb { get; set; } = false;
 
     private Rigidbody2D rb;
-    // Start is called before the first frame update
+    // Start is called before the a first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -154,5 +154,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Releasing walls");
         touchingWalls = false;
+        StopClimbing();
     }
 }
