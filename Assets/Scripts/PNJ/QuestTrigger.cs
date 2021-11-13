@@ -6,7 +6,7 @@ public class QuestTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") && gameObject.GetComponentInParent<Quest>().QuestIsAccepted)
+        if(collision.CompareTag("Player") /*&& gameObject.GetComponentInParent<Quest>().QuestIsAccepted*/)
         {
             gameObject.GetComponentInParent<Quest>().QuestIsFinished = true;
             gameObject.SetActive(false);

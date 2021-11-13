@@ -15,7 +15,7 @@ public class PlayerInputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerMovement.Move = Input.GetAxis("Horizontal");
+        PlayerMovement.Move = Input.GetAxis("Horizontal");
         if (Input.GetButtonDown("Jump"))
         {
             playerMovement.Jump();

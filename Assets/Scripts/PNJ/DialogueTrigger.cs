@@ -7,14 +7,27 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private bool isInRange = false;
     [SerializeField] private Quest quest;
+    [SerializeField] private static bool isTalking = false;
+    [SerializeField] private startCutScene cutScene;
+
+    public static bool IsTalking
+    {
+        get { return isTalking; }
+        set { isTalking = value; }
+    }
+
+    private void Start()
+    {
+        cutScene = GetComponentInChildren<startCutScene>();
+    }
     void Update()
     {
-        if (isInRange && Input.GetKeyDown(KeyCode.E) && !quest.QuestIsAccepted)
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && !quest.QuestIsAccepted && IsTalking == false)
         {
-            TriggerDialogue();
             quest.QuestIsAccepted = true;
+            TriggerDialogue();
         }
-        else if(isInRange && Input.GetKeyDown(KeyCode.E) && quest.QuestIsAccepted)
+        else if(isInRange && Input.GetKeyDown(KeyCode.E) && quest.QuestIsAccepted && IsTalking == false)
         {
             if(quest.QuestIsFinished)
             {
@@ -26,6 +39,14 @@ public class DialogueTrigger : MonoBehaviour
             {
                 //Dialogue de quête
             }
+        }
+        else if(isTalking && Input.GetKeyDown(KeyCode.E))
+        {
+            DialogueManager.Instance.DisplayNextSentence();
+        }
+        else if(isTalking == false && cutScene.isCutSceneOn)
+        {
+            cutScene.StopCutScene();
         }
     }
 
@@ -44,6 +65,7 @@ public class DialogueTrigger : MonoBehaviour
     private void TriggerDialogue()
     {
         // Code pour trigger la boite de dialogue avec les paramètres
+        cutScene.StartCutScene();
         DialogueManager.Instance.StartDialogue(dialogue);
     }
 }

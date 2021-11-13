@@ -236,6 +236,7 @@ Transform:
   m_Children:
   - {fileID: 5588173149413591158}
   - {fileID: 5588173149136025702}
+  - {fileID: 2279287007716380902}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -258,6 +259,7 @@ MonoBehaviour:
     - Pour passer veuillez me rapporter Mimi Matty
   isInRange: 0
   quest: {fileID: 5588173149663931601}
+  cutScene: {fileID: 0}
 --- !u!61 &5588173149663931604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -298,3 +300,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questIsAccepted: 0
   questIsFinished: 0
+--- !u!1001 &1109139004092052010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5588173149663931606}
+    m_Modifications:
+    - target: {fileID: 368898983139994699, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025079539259483567, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_Name
+      value: startCutScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9029043
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.221377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.2227116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+--- !u!4 &2279287007716380902 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1208604592426115788, guid: 4a67325bbe59e6a439b4eb82fb26ba1b, type: 3}
+  m_PrefabInstance: {fileID: 1109139004092052010}
+  m_PrefabAsset: {fileID: 0}

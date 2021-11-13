@@ -10,11 +10,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float checkGroundDistance;
 
-    private float move;
-    public float Move
+
+    [SerializeField] private static bool canMove = true;
+    public static bool CanMove
+    {
+        get { return canMove; }
+        set { canMove = value; }
+    }
+
+    private static float move;
+    public static float Move
     {
         get { return move; }
-        set { move = value; }
+        set
+        {
+            if (canMove)
+            { move = value; }
+        }
     }
 
     private Rigidbody2D rb;

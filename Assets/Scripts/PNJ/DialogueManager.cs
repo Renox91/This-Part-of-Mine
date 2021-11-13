@@ -11,6 +11,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
 
+    [SerializeField] private Animator animator;
+
+    
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -33,6 +36,11 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        PlayerMovement.Move = 0;
+        PlayerMovement.CanMove = false;
+        DialogueTrigger.IsTalking = true;
+
+        animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -54,11 +62,31 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+
+    }
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
 
     private void EndDialogue()
     {
+        animator.SetBool("IsOpen", false);
+        PlayerMovement.CanMove = true;
+        DialogueTrigger.IsTalking = false;
         Debug.Log("End Conversation");
+    }
+
+    public bool IsQueueEmpty()
+    {
+        return sentences.Count == 0;
     }
 }
