@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField] private Dialogue dialogue;
+    [SerializeField] private Dialogue dialogueStart;
+    [SerializeField] private Dialogue dialogueEnd;
     [SerializeField] private bool isInRange = false;
     [SerializeField] private Quest quest;
     [SerializeField] private static bool isTalking = false;
@@ -24,6 +25,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (isInRange && Input.GetKeyDown(KeyCode.E) && !quest.QuestIsAccepted && IsTalking == false)
         {
+            //Dialogue de début de quête
             quest.QuestIsAccepted = true;
             TriggerDialogue();
         }
@@ -31,13 +33,14 @@ public class DialogueTrigger : MonoBehaviour
         {
             if(quest.QuestIsFinished)
             {
-                //Dialogue de fin de quête
-                // Ouverture de x objectifs
-                gameObject.SetActive(false);
+                //Dialogue de quête finie
+                cutScene.StartCutScene();
+                DialogueManager.Instance.StartDialogue(dialogueEnd);
             }
             else
             {
-                //Dialogue de quête
+                //Dialogue de quête en cours
+                TriggerDialogue();
             }
         }
         else if(isTalking && Input.GetKeyDown(KeyCode.E))
@@ -66,6 +69,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         // Code pour trigger la boite de dialogue avec les paramètres
         cutScene.StartCutScene();
-        DialogueManager.Instance.StartDialogue(dialogue);
+        DialogueManager.Instance.StartDialogue(dialogueStart);
     }
 }

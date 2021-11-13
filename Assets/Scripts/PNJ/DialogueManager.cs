@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator.SetBool("IsOpen", false);
         sentences = new Queue<string>();
     }
 
