@@ -36,6 +36,4 @@ public class MovingPlatform : MonoBehaviour
         }
         transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
     }
-
-   
 }
