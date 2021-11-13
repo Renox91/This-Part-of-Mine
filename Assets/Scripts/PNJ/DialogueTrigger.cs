@@ -9,7 +9,8 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private bool isInRange = false;
     [SerializeField] private Quest quest;
     [SerializeField] private static bool isTalking = false;
-    [SerializeField] private startCutScene cutScene;
+    [SerializeField] private CinemachineSwitcher cinemachineSwitcher;
+    [SerializeField] private string boolTagScene;
 
     public static bool IsTalking
     {
@@ -19,7 +20,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        cutScene = GetComponentInChildren<startCutScene>();
+        
     }
     void Update()
     {
@@ -46,9 +47,9 @@ public class DialogueTrigger : MonoBehaviour
         {
             DialogueManager.Instance.DisplayNextSentence();
         }
-        else if(isTalking == false && cutScene.isCutSceneOn)
+        else if(isTalking == false && cinemachineSwitcher.isCutSceneOn)
         {
-            cutScene.StopCutScene();
+            cinemachineSwitcher.StopScene(boolTagScene);
         }
     }
 
@@ -67,7 +68,7 @@ public class DialogueTrigger : MonoBehaviour
     private void TriggerDialogue(Dialogue dialogue)
     {
         // Code pour trigger la boite de dialogue avec les paramètres
-        cutScene.StartCutScene();
+        cinemachineSwitcher.StartScene(boolTagScene);
         DialogueManager.Instance.StartDialogue(dialogue);
     }
 }
