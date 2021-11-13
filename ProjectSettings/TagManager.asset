@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Stone
+  - ice
   layers:
   - Default
   - TransparentFX
