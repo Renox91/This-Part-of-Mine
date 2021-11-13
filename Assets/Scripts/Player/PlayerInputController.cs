@@ -16,7 +16,7 @@ public class PlayerInputController : MonoBehaviour
     void Update()
     {
         PlayerMovement.Move = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
         {
             playerMovement.Jump();
         }
