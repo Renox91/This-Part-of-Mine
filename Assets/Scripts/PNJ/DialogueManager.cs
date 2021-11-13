@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,12 +14,13 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    private UnityEvent endEvent;
     
     private void Awake()
     {
         if (_instance != null && _instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         else
         {
@@ -46,6 +48,8 @@ public class DialogueManager : MonoBehaviour
 
         sentences.Clear();
 
+        endEvent = dialogue.endEvent;
+
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -59,6 +63,7 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
+            endEvent.Invoke();
             return;
         }
 

@@ -23,24 +23,23 @@ public class DialogueTrigger : MonoBehaviour
     }
     void Update()
     {
-        if (isInRange && Input.GetKeyDown(KeyCode.E) && !quest.QuestIsAccepted && IsTalking == false)
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && !quest.QuestIsAccepted && isTalking == false)
         {
             //Dialogue de début de quête
             quest.QuestIsAccepted = true;
-            TriggerDialogue();
+            TriggerDialogue(dialogueStart);
         }
-        else if(isInRange && Input.GetKeyDown(KeyCode.E) && quest.QuestIsAccepted && IsTalking == false)
+        else if(isInRange && Input.GetKeyDown(KeyCode.E) && quest.QuestIsAccepted && isTalking == false)
         {
             if(quest.QuestIsFinished)
             {
                 //Dialogue de quête finie
-                cutScene.StartCutScene();
-                DialogueManager.Instance.StartDialogue(dialogueEnd);
+                TriggerDialogue(dialogueEnd);
             }
             else
             {
                 //Dialogue de quête en cours
-                TriggerDialogue();
+                TriggerDialogue(dialogueStart);
             }
         }
         else if(isTalking && Input.GetKeyDown(KeyCode.E))
@@ -65,10 +64,10 @@ public class DialogueTrigger : MonoBehaviour
             isInRange = false;
     }
 
-    private void TriggerDialogue()
+    private void TriggerDialogue(Dialogue dialogue)
     {
         // Code pour trigger la boite de dialogue avec les paramètres
         cutScene.StartCutScene();
-        DialogueManager.Instance.StartDialogue(dialogueStart);
+        DialogueManager.Instance.StartDialogue(dialogue);
     }
 }
