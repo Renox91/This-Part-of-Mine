@@ -38,9 +38,9 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(rb.velocity.x, jump));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Ground"))
+        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Stone"))
         {
             isJumping = false;
         }
@@ -48,20 +48,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Ground"))
+        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Stone"))
         {
             isJumping = true;
         }
-    }
+    }*/
 
     private void checkGroundRotation()
     {
         // Cast a ray straight down.
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, checkGroundDistance, groundLayer);
+        Vector3 deltaX = new Vector3(transform.localScale.x / 2,0,0);
+        RaycastHit2D hit1 = Physics2D.Raycast(transform.position - deltaX, Vector2.down, checkGroundDistance, groundLayer);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + deltaX, Vector2.down, checkGroundDistance, groundLayer);
         // If it hits something...
-        if (hit.collider != null)
+        if (hit1.collider != null)
         {
-            //transform.rotation = Quaternion.EulerAngles(0, 0, Mathf.Atan2(hit.normal.y, hit.normal.x));
+            isJumping = false;
+            //transform.rotation = Quaternion.EulerAngles(0, 0, (Mathf.Atan2(hit1.normal.y, hit1.normal.x) * Mathf.Rad2Deg));
         }
+        else if (hit2.collider != null)
+        {
+            isJumping = false;
+            //transform.rotation = Quaternion.EulerAngles(0, 0, (Mathf.Atan2(hit2.normal.y, hit2.normal.x) * Mathf.Rad2Deg));
+        }
+        else
+        {
+            isJumping = true;
+        }
+
     }
 }
