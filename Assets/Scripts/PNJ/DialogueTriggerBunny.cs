@@ -31,7 +31,7 @@ public class DialogueTriggerBunny : MonoBehaviour
                 TriggerDialogue(dialogueStart);
                 Ecount = 1;
             }
-            else if(Input.GetKeyDown(KeyCode.E))
+            else if (Input.GetButtonDown("Talk"))
             {
                 DialogueManager.Instance.DisplayNextSentence();
             }
