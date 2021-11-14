@@ -2254,26 +2254,6 @@ PrefabInstance:
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1473664368848375558, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
-      propertyPath: climbSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1473664368848375558, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
-      propertyPath: acceleration
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1473664368848375558, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
-      propertyPath: climbDistance
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1473664368848375558, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
-      propertyPath: stopDeceleration
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1473664368848375558, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
-      propertyPath: turnDeceleration
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1473664368848375558, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: checkGroundDistance
       value: 1.5
       objectReference: {fileID: 0}
