@@ -214,7 +214,7 @@ public class PlayerMovement : MonoBehaviour
                 TouchedWalls();
                 fromLeft = Mathf.Sign(contactList[i].normal.x) == 1f;
             }
-            else if (contactList[i].normal.y > 0)
+            else if (contactList[i].normal.y > 0 && !collision.collider.CompareTag("ChampignonRouge"))
             {
                 lastGroundCollider = collision.collider;
                 TouchedGround();
@@ -252,6 +252,7 @@ public class PlayerMovement : MonoBehaviour
         isJumping = false;
         climbed = false;
         audioSource.Play();
+        Debug.Log("Touching ground");
     }
 
     void LeavingGround()

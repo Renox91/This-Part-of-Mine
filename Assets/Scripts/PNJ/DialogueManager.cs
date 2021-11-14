@@ -43,8 +43,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        PlayerMovement.CanMove = false;
         PlayerMovement.Move = 0;
+        PlayerMovement.CanMove = false;
         DialogueTrigger.IsTalking = true;
 
         animator.SetBool("IsOpen", true);
