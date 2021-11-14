@@ -123,13 +123,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(-speed/2f, rb.velocity.y);
                 animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
-            }else animationManager.SetSpeed(0f);
+            }
+            else animationManager.SetSpeed(0f);
         }
     }
 
     public void JumpOrGlide()
     {
-        if (!isTalkingToBunny)
+        if (canMove && !isTalkingToBunny)
         {
             if (!inAir)
             {
