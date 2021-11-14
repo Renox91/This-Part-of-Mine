@@ -19,41 +19,40 @@ public class DialogueTrigger : MonoBehaviour
     }
     void Update()
     {
-        if (isInRange && Input.GetKeyDown(KeyCode.E) && !quest.QuestIsAccepted && isTalking == false)
+        if (isInRange)
         {
-            //Dialogue de début de quête
-            quest.QuestIsAccepted = true;
-            TriggerDialogue(dialogueStart);
-            Debug.Log("Dialogue_Start");
-        }
-        else if(isInRange && Input.GetKeyDown(KeyCode.E) && quest.QuestIsAccepted && isTalking == false)
-        {
-            Debug.Log(1);
-            if(quest.QuestIsFinished)
+            if (Input.GetButtonDown("Talk"))
             {
-                //Dialogue de quête finie
-                TriggerDialogue(dialogueEnd);
-                GetComponent<Quest01>().EndQuest();
+                if (!isTalking)
+                {
+                    if (!quest.QuestIsAccepted || !quest.QuestIsFinished)
+                    {
+                        //Dialogue de début de quête
+                        quest.QuestIsAccepted = true;
+                        TriggerDialogue(dialogueStart);
+                        Debug.Log("Dialogue_Start");
+                    }
+                    else if (quest.QuestIsFinished)
+                    {
+                        //Dialogue de quête finie
+                        TriggerDialogue(dialogueEnd);
+                        GetComponent<Quest01>().EndQuest();
+                    }
+                }
+                else
+                {
+                    DialogueManager.Instance.DisplayNextSentence();
+                }
             }
-            else
+            else if (isTalking && Input.GetButtonDown("Jump"))
             {
-                //Dialogue de quête en cours
-                TriggerDialogue(dialogueStart);
-                Debug.Log("Dialogue_Start");
+                isTalking = false;
+                cinemachineSwitcher.StopScene(boolTagScene);
+                DialogueManager.Instance.EndDialogue();
             }
         }
-        else if(isInRange && isTalking && Input.GetKeyDown(KeyCode.Space))
-        {
-            isTalking = false;
-            cinemachineSwitcher.StopScene(boolTagScene);
-            DialogueManager.Instance.EndDialogue();
-        }
-        else if(isInRange && isTalking && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log(2);
-            DialogueManager.Instance.DisplayNextSentence();
-        }
-        if(isTalking == false && cinemachineSwitcher.isCutSceneOn)
+
+        if (!isTalking && cinemachineSwitcher.isCutSceneOn)
         {
             cinemachineSwitcher.StopScene(boolTagScene);
         }
