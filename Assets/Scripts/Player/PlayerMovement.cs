@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     private bool climbed = false;
     private bool fromLeft = false;
 
+    private float previousGravityScale;
+
     private bool isTalkingToBunny = false;
     private static bool canMove = false;
     public static bool CanMove
@@ -118,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if (CanClimb && touchingWalls && inAir && !climbed)
         {
             climbed = true;
+            previousGravityScale = rb.gravityScale;
             rb.gravityScale = 0f;
             rb.velocity = climbSpeed * Vector2.up;
             rb.SetRotation(fromLeft ? -90f : 90f);
@@ -127,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
     void StopClimbing()
     {
-        rb.gravityScale = 1f;
+        rb.gravityScale = previousGravityScale;
         rb.SetRotation(0f);
     }
 
