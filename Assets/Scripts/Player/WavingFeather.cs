@@ -11,7 +11,7 @@ public class WavingFeather : MonoBehaviour
     [SerializeField] private float fadeOutTime;
 
     private float fadingSpeed;
-    private new SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
