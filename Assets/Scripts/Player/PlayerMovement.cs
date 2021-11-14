@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] public float acceleration;
+    [SerializeField] public float stopDeceleration;
+    [SerializeField] public float turnDeceleration;
     [SerializeField] private float speed;
     [SerializeField] private float jump;
     [SerializeField] private LayerMask groundLayer;
@@ -56,7 +59,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(move * speed, rb.velocity.y);
+        float acceleration;
+        float targetHorSpeed = move * speed;
+        var vel = rb.velocity;
+
+        if (Mathf.Abs(targetHorSpeed) < 0.0625f)
+            acceleration = stopDeceleration;
+        else if (targetHorSpeed * vel.x < 0f)
+            acceleration = turnDeceleration;
+        else acceleration = this.acceleration;
+
+        if (vel.x < targetHorSpeed)
+            vel.x = Mathf.Min(vel.x + acceleration * Time.fixedDeltaTime, targetHorSpeed);
+        else if (vel.x > targetHorSpeed)
+            vel.x = Mathf.Max(vel.x - acceleration * Time.fixedDeltaTime, targetHorSpeed);
+
+        rb.velocity = vel;
 
         if (rb.velocity.x < 0)
             spriteRenderer.flipX = true;
