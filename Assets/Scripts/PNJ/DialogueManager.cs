@@ -61,11 +61,29 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    public void StartDialogueInfo(Dialogue dialogue)
+    {
+
+        animator.SetBool("IsOpen", true);
+        nameText.text = dialogue.name;
+
+        sentences.Clear();
+
+        endEvent = dialogue.endEvent;
+
+        foreach (string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        DisplayNextSentence();
+    }
+
     public void DisplayNextSentence()
     {
         if (endMode)
         {
-            if (sentences.Count == 3)
+            if (sentences.Count == 4)
             {
                 FindObjectOfType<DialogueTriggerBunny>().SadLapine();
             }
@@ -99,7 +117,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
         PlayerMovement.CanMove = true;
