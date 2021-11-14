@@ -5,6 +5,7 @@ using UnityEngine;
 public class Quest01 : MonoBehaviour
 {
     [SerializeField] private int questIndex;
+    [SerializeField] private GameObject toDestroy;
     public void EndQuest()
     {
         if (questIndex == 0)
@@ -14,12 +15,12 @@ public class Quest01 : MonoBehaviour
         }
         else if (questIndex == 1)
         {
-            PlayerMovement.CanClimb = true;
+            PlayerMovement.CanGlide = true;
             Debug.Log("EndSecondQuest");
         }
         else if (questIndex == 2)
         {
-            PlayerMovement.CanClimb = true;
+            toDestroy.SetActive(false);
             Debug.Log("EndThirdQuest");
         }
     }

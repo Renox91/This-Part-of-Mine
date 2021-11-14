@@ -6,15 +6,18 @@ using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
+    private bool endMode;
     private static DialogueManager _instance;
     public static DialogueManager Instance { get { return _instance; } }
+
+    public bool EndMode { get => endMode; set => endMode = value; }
 
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     [SerializeField] private Animator animator;
 
-    //private UnityEvent endEvent;
+    private UnityEvent endEvent;
     
     private void Awake()
     {
@@ -48,7 +51,7 @@ public class DialogueManager : MonoBehaviour
 
         sentences.Clear();
 
-        //endEvent = dialogue.endEvent;
+        endEvent = dialogue.endEvent;
 
         foreach(string sentence in dialogue.sentences)
         {
@@ -60,10 +63,23 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        if (endMode)
+        {
+            if (sentences.Count == 3)
+            {
+                FindObjectOfType<DialogueTriggerBunny>().SadLapine();
+            }
+            else if (sentences.Count == 0)
+            {
+                FindObjectOfType<DialogueTriggerBunny>().KissLapine();
+                return;
+            }
+        }
+
         if (sentences.Count == 0)
         {
             EndDialogue();
-            //endEvent.Invoke();
+            endEvent.Invoke();
             return;
         }
 

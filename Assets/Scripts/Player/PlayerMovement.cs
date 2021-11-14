@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool CanClimb { get; set; } = false;
     public static bool CanGlide { get; set; } = false;
+    public bool IsOnIce { get => isOnIce; set => isOnIce = value; }
 
     private Rigidbody2D rb;
     // Start is called before the a first frame update
@@ -117,15 +118,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (isTalkingToBunny) // Really?
         {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             if (transform.position.x > -240.72f) 
             {
                 rb.velocity = new Vector2(-speed/2f, rb.velocity.y);
-                animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
-                spriteRenderer.flipX = true;
-            }
-            else 
-            {
-                rb.velocity = new Vector2(0f, rb.velocity.y);
                 animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
             }
         }
