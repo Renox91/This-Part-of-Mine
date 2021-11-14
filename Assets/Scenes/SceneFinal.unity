@@ -710,6 +710,84 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8057dd77c18091439b4f6769e7c0a55, type: 3}
+--- !u!1 &161232435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161232436}
+  - component: {fileID: 161232438}
+  - component: {fileID: 161232437}
+  m_Layer: 0
+  m_Name: MoveTutoDialogue (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &161232436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161232435}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.53, y: 1.7, z: 44.42002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 721695165}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &161232437
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161232435}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.8379874, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.23486, y: 10.630499}
+  m_EdgeRadius: 0
+--- !u!114 &161232438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161232435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d38f26abae027942a582d3806e6b894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - Si le chemin te sembles impossible, la touche espace te permettra de sauter.
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  boolTagScene: 
 --- !u!1 &185166613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5588173149663931605, guid: e8101156bcfee804386001fe1fef162b, type: 3}
@@ -1543,6 +1621,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5588173149413591153, guid: e8101156bcfee804386001fe1fef162b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5588173149663931605, guid: e8101156bcfee804386001fe1fef162b, type: 3}
       propertyPath: m_Name
       value: PNJ01
@@ -1694,6 +1776,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
+--- !u!1 &630365645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 630365646}
+  - component: {fileID: 630365647}
+  - component: {fileID: 630365648}
+  m_Layer: 0
+  m_Name: ClimbTutoDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &630365646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630365645}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 42.73, y: -2.55, z: 44.42002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 721695165}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &630365647
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630365645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 7.4806175, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 29.232536, y: 10.630499}
+  m_EdgeRadius: 0
+--- !u!114 &630365648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630365645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb789d905199e04a87bf178ced4f8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "Tu peux d\xE9sormais grimper aux murs. Pour ce faire utilises la touche Z
+      lorsque tu es proche d'un mur."
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  boolTagScene: 
 --- !u!1 &637777952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +2107,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3260250541363252487, guid: 70c9d81334463af4c97ef8713778232f, type: 3}
   m_PrefabInstance: {fileID: 958854717}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &721695164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721695165}
+  m_Layer: 0
+  m_Name: InfoDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &721695165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721695164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.262497, y: -1.3527683, z: -53.070267}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1232551108}
+  - {fileID: 161232436}
+  - {fileID: 630365646}
+  - {fileID: 1761935581}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &731946800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3708,6 +3903,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228754825}
   m_CullTransparentMesh: 1
+--- !u!1 &1232551106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232551108}
+  - component: {fileID: 1232551107}
+  - component: {fileID: 1232551109}
+  m_Layer: 0
+  m_Name: MoveTutoDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1232551107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232551106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d38f26abae027942a582d3806e6b894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "Bienvenu jeune rat sans queue ! Pour te d\xE9placer, utilises Z,Q,S,D."
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  boolTagScene: 
+--- !u!4 &1232551108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232551106}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.65, y: 1.7, z: 44.42002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 721695165}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1232551109
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232551106}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.35503697, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 14.981371, y: 10.630499}
+  m_EdgeRadius: 0
 --- !u!1 &1235839855
 GameObject:
   m_ObjectHideFlags: 0
@@ -6517,6 +6790,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7042439975365373264, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
   m_PrefabInstance: {fileID: 7042439974689935133}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1761935580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761935581}
+  - component: {fileID: 1761935583}
+  - component: {fileID: 1761935582}
+  m_Layer: 0
+  m_Name: GlideTutoDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761935581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761935580}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -118, y: 6.2, z: 44.42002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 721695165}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1761935582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761935580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fb10a79648c2b49ba251396fd95f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "Gr\xE2ce \xE0 la g\xE9n\xE9rosit\xE9 de l'aigle, tu as d\xE9sormais la capacit\xE9
+      de planer ! Reste appuyer sur Espace une fois en l'air pour planer."
+    endEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  boolTagScene: 
+--- !u!61 &1761935583
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761935580}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 12.123726, y: -1.0474691}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.94632, y: 8.535561}
+  m_EdgeRadius: 0
 --- !u!1 &1770211471
 GameObject:
   m_ObjectHideFlags: 0
@@ -7465,6 +7817,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 731946801}
     m_Modifications:
+    - target: {fileID: 7042439974768988954, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7042439975365373264, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7553,6 +7909,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.86900544
       objectReference: {fileID: 0}
+    - target: {fileID: 7042439975929919070, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
 --- !u!4 &7293298232970443813 stripped
@@ -7570,6 +7930,10 @@ PrefabInstance:
     - target: {fileID: 7959817031054624445, guid: e685541f147afed4694d48ff7744bea9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959817031098515431, guid: e685541f147afed4694d48ff7744bea9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7959817031658767552, guid: e685541f147afed4694d48ff7744bea9, type: 3}
       propertyPath: m_Name
@@ -7657,6 +8021,10 @@ PrefabInstance:
       value: "Que quelqu\u2019un me vienne en aide, par piti\xE9 ! Mon \u0153uf est
         riv\xE9 au nid au sein du lac gel\xE9 ! Je ne puis le r\xE9cup\xE9rer car
         mes pattes palm\xE9es m\u2019en pr\xE9viennent. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959817032247214485, guid: e685541f147afed4694d48ff7744bea9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e685541f147afed4694d48ff7744bea9, type: 3}

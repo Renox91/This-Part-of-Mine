@@ -61,6 +61,24 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    public void StartDialogueInfo(Dialogue dialogue)
+    {
+
+        animator.SetBool("IsOpen", true);
+        nameText.text = dialogue.name;
+
+        sentences.Clear();
+
+        endEvent = dialogue.endEvent;
+
+        foreach (string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        DisplayNextSentence();
+    }
+
     public void DisplayNextSentence()
     {
         if (endMode)
@@ -99,7 +117,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
         PlayerMovement.CanMove = true;

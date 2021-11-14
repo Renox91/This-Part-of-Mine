@@ -42,6 +42,12 @@ public class DialogueTrigger : MonoBehaviour
                 Debug.Log("Dialogue_Start");
             }
         }
+        else if(isInRange && isTalking && Input.GetKeyDown(KeyCode.Space))
+        {
+            isTalking = false;
+            cinemachineSwitcher.StopScene(boolTagScene);
+            DialogueManager.Instance.EndDialogue();
+        }
         else if(isInRange && isTalking && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log(2);
