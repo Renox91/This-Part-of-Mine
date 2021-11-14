@@ -16,22 +16,23 @@ public class DialogueTriggerBunny : MonoBehaviour
 
     [SerializeField] private GameObject credits;
 
-    private int Ecount;
+    private bool approach;
 
     private void Start()
     {
-        Ecount = 0;
+        approach = false;
     }
+
     void Update()
     {
         if (FindObjectOfType<PlayerMovement>().transform.position.x < -240f)
         {
-            if ( Ecount == 0 )
+            if (!approach)
             {
                 TriggerDialogue(dialogueStart);
-                Ecount = 1;
+                approach = true;
             }
-            else if (Input.GetButtonDown("Talk"))
+            else if (Input.GetButtonDown("Submit"))
             {
                 DialogueManager.Instance.DisplayNextSentence();
             }

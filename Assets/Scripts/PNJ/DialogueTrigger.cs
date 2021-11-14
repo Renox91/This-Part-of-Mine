@@ -21,34 +21,26 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (isInRange)
         {
-            if (Input.GetButtonDown("Talk"))
+
+            if (!isTalking && Input.GetButtonDown("Talk"))
             {
-                if (!isTalking)
+                if (!quest.QuestIsAccepted || !quest.QuestIsFinished)
                 {
-                    if (!quest.QuestIsAccepted || !quest.QuestIsFinished)
-                    {
-                        //Dialogue de début de quête
-                        quest.QuestIsAccepted = true;
-                        TriggerDialogue(dialogueStart);
-                        Debug.Log("Dialogue_Start");
-                    }
-                    else if (quest.QuestIsFinished)
-                    {
-                        //Dialogue de quête finie
-                        TriggerDialogue(dialogueEnd);
-                        GetComponent<Quest01>().EndQuest();
-                    }
+                    //Dialogue de début de quête
+                    quest.QuestIsAccepted = true;
+                    TriggerDialogue(dialogueStart);
+                    Debug.Log("Dialogue_Start");
                 }
-                else
+                else if (quest.QuestIsFinished)
                 {
-                    DialogueManager.Instance.DisplayNextSentence();
+                    //Dialogue de quête finie
+                    TriggerDialogue(dialogueEnd);
+                    GetComponent<Quest01>().EndQuest();
                 }
             }
-            else if (isTalking && Input.GetButtonDown("Jump"))
+            else if (isTalking && Input.GetButtonDown("Submit"))
             {
-                isTalking = false;
-                cinemachineSwitcher.StopScene(boolTagScene);
-                DialogueManager.Instance.EndDialogue();
+                DialogueManager.Instance.DisplayNextSentence();
             }
         }
 
