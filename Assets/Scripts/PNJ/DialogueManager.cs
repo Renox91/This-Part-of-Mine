@@ -92,10 +92,6 @@ public class DialogueManager : MonoBehaviour
             {
                 FindObjectOfType<DialogueTriggerBunny>().KissLapine();
             }
-            else if(sentences.Count == 0)
-            {
-                Invoke("EndGame", 63f);
-            }
         }
 
         if (sentences.Count == 0)
@@ -111,10 +107,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void EndGame()
-    {
-        SceneManager.LoadScene(0);
-    }
+    
 
     IEnumerator TypeSentence (string sentence)
     {

@@ -54,9 +54,14 @@ public class DialogueTriggerBunny : MonoBehaviour
         RatKiss.SetActive(true);
         spriteRat.enabled = false;
         credits.SetActive(true);
+        Invoke("EndGame", 63f);
     }
 
- 
+    public void EndGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     private void TriggerDialogue(Dialogue dialogue)
     {
         FindObjectOfType<AudioManager>().SwitchMusic();
