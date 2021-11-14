@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         set { move = value; }
     }
 
-    public static bool CanClimb { get; set; } = false;
+    public static bool CanClimb { get; set; } = true;
 
     private Rigidbody2D rb;
     // Start is called before the a first frame update
