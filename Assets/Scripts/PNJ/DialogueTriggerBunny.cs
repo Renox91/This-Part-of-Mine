@@ -49,12 +49,12 @@ public class DialogueTriggerBunny : MonoBehaviour
         lapineNormal.SetActive(false);
         lapineKiss.SetActive(true);
         credits.SetActive(true);
-        Invoke("EndGame", 5f);
+        Invoke("EndGame", 48f);
     }
 
     public void EndGame()
     {
-        //SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
     private void TriggerDialogue(Dialogue dialogue)
     {
