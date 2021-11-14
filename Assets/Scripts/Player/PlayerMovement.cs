@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove && !isTalkingToBunny)
         {
-            if (!inAir)
+            if (!inAir && !climbed)
             {
                 rb.AddForce(new Vector2(0f, jump));
                 isJumping = true;

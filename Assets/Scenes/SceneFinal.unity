@@ -2633,6 +2633,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5588173149136025697, guid: e8101156bcfee804386001fe1fef162b, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588173149136025697, guid: e8101156bcfee804386001fe1fef162b, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "Tu as r\xE9cup\xE9r\xE9 un pot de miel."
+      objectReference: {fileID: 0}
     - target: {fileID: 5588173149413591153, guid: e8101156bcfee804386001fe1fef162b, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -3612,11 +3620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.7
+      value: -15.5
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17600024
+      value: 2.4760003
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4741,7 +4749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993579040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -89.3837, y: 7.8202586, z: 0.39900494}
+  m_LocalPosition: {x: -88.1837, y: 10.120258, z: 0.39900494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1606927512}
@@ -6713,11 +6721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.7
+      value: -15.5
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11597,6 +11605,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7042439975323583872, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042439975323583872, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "Tu as r\xE9cup\xE9r\xE9 une pi\xE8ce d'or."
+      objectReference: {fileID: 0}
     - target: {fileID: 7042439975365373264, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -11797,6 +11813,14 @@ PrefabInstance:
     - target: {fileID: 7959817030777516219, guid: e685541f147afed4694d48ff7744bea9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.533997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959817031054624443, guid: e685541f147afed4694d48ff7744bea9, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959817031054624443, guid: e685541f147afed4694d48ff7744bea9, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "Tu as r\xE9cup\xE9r\xE9 ... Un oeuf en bois ?"
       objectReference: {fileID: 0}
     - target: {fileID: 7959817031054624445, guid: e685541f147afed4694d48ff7744bea9, type: 3}
       propertyPath: m_LocalPosition.y
