@@ -1115,7 +1115,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - Si le chemin te sembles impossible, la touche espace te permettra de sauter.
+    - Si le chemin te sembles impossible, la touche espace (ou A sur la manette)
+      te permettra de sauter.
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -1459,7 +1460,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - 'Il est possible d''interagir avec les autres animaux en appuyant sur E. '
+    - 'Il est possible d''interagir avec les autres animaux en appuyant sur E (ou
+      B sur ta manette). '
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -2656,7 +2658,7 @@ MonoBehaviour:
     name: 
     sentences:
     - "Tu peux d\xE9sormais grimper aux murs. Pour ce faire utilises la touche Z
-      lorsque tu es proche d'un mur."
+      (ou W) lorsque tu es proche d'un mur, ou pousse ton stick vers le haut."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -3392,22 +3394,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8044896014600603793, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -8044896014600603793, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
-      propertyPath: offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8044896014600603793, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
-      propertyPath: offset.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8044896014600603793, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
-      propertyPath: offset.z
-      value: -5
-      objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527817, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: orthographic size
       value: 4.38
@@ -3422,11 +3408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -222.2
+      value: -29.15
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8760004
+      value: 2.0360003
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3460,8 +3446,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -8044896014600603793, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
 --- !u!1 &802305867 stripped
 GameObject:
@@ -3507,6 +3492,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
   m_PrefabInstance: {fileID: 802305866}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &802305873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802305867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 802305871}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  stopNaNPropagation: 0
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &819080487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3758,7 +3803,7 @@ Transform:
   - {fileID: 43791839}
   - {fileID: 1260133791}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &846942875
 GameObject:
@@ -4543,7 +4588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993579040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -294.8837, y: 15.520259, z: 0.39900494}
+  m_LocalPosition: {x: -101.8337, y: 9.680259, z: 0.39900494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1606927512}
@@ -5556,7 +5601,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "Bienvenu jeune rat sans queue ! Pour te d\xE9placer, utilises Z,Q,S,D."
+    - "Bienvenu jeune rat sans queue ! Pour te d\xE9placer, utilise Q (ou A) et D
+      sur le clavier, et le stick gauche sur la manette."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -6396,11 +6442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -222.2
+      value: -29.15
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9692,7 +9738,8 @@ MonoBehaviour:
     name: 
     sentences:
     - "Gr\xE2ce \xE0 la g\xE9n\xE9rosit\xE9 de l'aigle, tu as d\xE9sormais la capacit\xE9
-      de planer ! Reste appuyer sur Espace une fois en l'air pour planer."
+      de planer ! Reste appuy\xE9 sur Espace (ou A sur la manette) une fois en l'air
+      pour planer."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -10019,6 +10066,54 @@ Transform:
   - {fileID: 66129478}
   m_Father: {fileID: 2143211881}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1870480273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870480275}
+  - component: {fileID: 1870480274}
+  m_Layer: 3
+  m_Name: PostFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1870480274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870480273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 0caa27fe1ec4922429db3b7c48718402, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!4 &1870480275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870480273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1883957270
 PrefabInstance:
