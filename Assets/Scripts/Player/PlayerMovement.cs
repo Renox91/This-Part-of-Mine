@@ -154,6 +154,5 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Releasing walls");
         touchingWalls = false;
-        StopClimbing();
     }
 }
