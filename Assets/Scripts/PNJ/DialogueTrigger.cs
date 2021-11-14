@@ -12,10 +12,17 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private CinemachineSwitcher cinemachineSwitcher;
     [SerializeField] private string boolTagScene;
 
+    [SerializeField] private AudioSource audioSource;
+
     public static bool IsTalking
     {
         get { return isTalking; }
         set { isTalking = value; }
+    }
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -35,6 +42,7 @@ public class DialogueTrigger : MonoBehaviour
                 {
                     //Dialogue de quête finie
                     TriggerDialogue(dialogueEnd);
+                    audioSource.Play();
                     GetComponent<Quest01>().EndQuest();
                 }
             }

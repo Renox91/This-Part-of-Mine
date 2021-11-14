@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -87,10 +88,13 @@ public class DialogueManager : MonoBehaviour
             {
                 FindObjectOfType<DialogueTriggerBunny>().SadLapine();
             }
-            else if (sentences.Count == 0)
+            else if (sentences.Count == 1)
             {
                 FindObjectOfType<DialogueTriggerBunny>().KissLapine();
-                return;
+            }
+            else if(sentences.Count == 0)
+            {
+                Invoke("EndGame", 63f);
             }
         }
 
@@ -105,6 +109,11 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
 
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator TypeSentence (string sentence)

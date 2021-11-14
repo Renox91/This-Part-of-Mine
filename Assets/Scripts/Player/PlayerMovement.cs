@@ -51,12 +51,14 @@ public class PlayerMovement : MonoBehaviour
         set { move = value; }
     }
 
-    public static bool CanClimb { get; set; } = true;
+    public static bool CanClimb { get; set; } = false;
     public static bool CanGlide { get; set; } = false;
     public bool IsOnIce { get => isOnIce; set => isOnIce = value; }
 
     private Rigidbody2D rb;
     // Start is called before the a first frame update
+
+    private AudioSource audioSource;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -65,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
         contactList = new List<ContactPoint2D>();
         canMove = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -99,7 +102,10 @@ public class PlayerMovement : MonoBehaviour
             else if (rb.velocity.x > 0)
                 scale.x = Mathf.Abs(scale.x);
             transform.localScale = scale;
-            animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+            if(!climbed)
+            {
+                animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+            }
         }
         else
         {
@@ -162,11 +168,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CanClimb && touchingWalls && !isGliding && !climbed)
         {
+            animationManager.SetJump(false);
             climbed = true;
             previousGravityScale = rb.gravityScale;
             rb.gravityScale = 0f;
             rb.velocity = climbSpeed * Vector2.up;
             rb.SetRotation(fromLeft ? -90f : 90f);
+            animationManager.SetSpeed(1);
+
             Invoke(nameof(StopClimbing), climbDistance / climbSpeed);
         }
     }
@@ -226,11 +235,15 @@ public class PlayerMovement : MonoBehaviour
         inAir = false;
         isJumping = false;
         climbed = false;
+        audioSource.Play();
     }
 
     void LeavingGround()
     {
-        animationManager.SetJump(true);
+        if(!climbed)
+        {
+            animationManager.SetJump(true);
+        }
         inAir = true;
     }
 
