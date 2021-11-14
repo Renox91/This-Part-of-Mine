@@ -83,7 +83,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (endMode)
         {
-            if (sentences.Count == 3)
+            if (sentences.Count == 4)
             {
                 FindObjectOfType<DialogueTriggerBunny>().SadLapine();
             }

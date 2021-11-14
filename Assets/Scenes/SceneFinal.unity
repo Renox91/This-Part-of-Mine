@@ -7889,6 +7889,38 @@ PrefabInstance:
       value: "Rat s\u2019il te plait aide moi. J\u2019ai fait tomber ma pi\xE8ce
         pr\xE9f\xE9r\xE9e dans ce trou. Une superbe pi\xE8ce en or !"
       objectReference: {fileID: 0}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueEnd.endEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueStart.endEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueEnd.endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueEnd.endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7042439974689935134}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueEnd.endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueEnd.endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndQuest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueEnd.endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Quest01, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueEnd.endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7042439975365373268, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
       propertyPath: m_Name
       value: PNJ02
@@ -7915,6 +7947,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+--- !u!114 &7042439974689935134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7042439975365373267, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+  m_PrefabInstance: {fileID: 7042439974689935133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418998e36c0ba874cae61d5bca70b2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7293298232970443813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3260250541363252487, guid: e11454ef7a0d8d14c9d93189280387c8, type: 3}
