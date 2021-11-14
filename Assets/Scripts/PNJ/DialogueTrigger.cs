@@ -17,11 +17,6 @@ public class DialogueTrigger : MonoBehaviour
         get { return isTalking; }
         set { isTalking = value; }
     }
-
-    private void Start()
-    {
-        
-    }
     void Update()
     {
         if (isInRange && Input.GetKeyDown(KeyCode.E) && !quest.QuestIsAccepted && isTalking == false)
@@ -29,25 +24,30 @@ public class DialogueTrigger : MonoBehaviour
             //Dialogue de début de quête
             quest.QuestIsAccepted = true;
             TriggerDialogue(dialogueStart);
+            Debug.Log("Dialogue_Start");
         }
         else if(isInRange && Input.GetKeyDown(KeyCode.E) && quest.QuestIsAccepted && isTalking == false)
         {
+            Debug.Log(1);
             if(quest.QuestIsFinished)
             {
                 //Dialogue de quête finie
                 TriggerDialogue(dialogueEnd);
+                GetComponent<Quest01>().EndQuest();
             }
             else
             {
                 //Dialogue de quête en cours
                 TriggerDialogue(dialogueStart);
+                Debug.Log("Dialogue_Start");
             }
         }
-        else if(isTalking && Input.GetKeyDown(KeyCode.E))
+        else if(isInRange && isTalking && Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log(2);
             DialogueManager.Instance.DisplayNextSentence();
         }
-        else if(isTalking == false && cinemachineSwitcher.isCutSceneOn)
+        if(isTalking == false && cinemachineSwitcher.isCutSceneOn)
         {
             cinemachineSwitcher.StopScene(boolTagScene);
         }

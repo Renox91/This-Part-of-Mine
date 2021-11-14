@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    private Transform cameraTransform;
+    [SerializeField]private Transform cameraTransform;
     private Vector3 lastCamPos;
     [SerializeField] private Vector2 parallaxEffect;
     private void Start()

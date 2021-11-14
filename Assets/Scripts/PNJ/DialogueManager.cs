@@ -6,8 +6,11 @@ using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
+    private bool endMode;
     private static DialogueManager _instance;
     public static DialogueManager Instance { get { return _instance; } }
+
+    public bool EndMode { get => endMode; set => endMode = value; }
 
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -39,8 +42,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        PlayerMovement.Move = 0;
         PlayerMovement.CanMove = false;
+        PlayerMovement.Move = 0;
         DialogueTrigger.IsTalking = true;
 
         animator.SetBool("IsOpen", true);
@@ -60,6 +63,19 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        if (endMode)
+        {
+            if (sentences.Count == 3)
+            {
+                FindObjectOfType<DialogueTriggerBunny>().SadLapine();
+            }
+            else if (sentences.Count == 0)
+            {
+                FindObjectOfType<DialogueTriggerBunny>().KissLapine();
+                return;
+            }
+        }
+
         if (sentences.Count == 0)
         {
             EndDialogue();
