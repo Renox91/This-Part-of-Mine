@@ -35,7 +35,7 @@ public class DialogueTriggerBunny : MonoBehaviour
                 TriggerDialogue(dialogueStart);
                 approach = true;
             }
-            else if (Input.GetButtonDown("Submit") && approach)
+            else if (Input.GetButtonDown("Talk") && approach)
             {
                 DialogueManager.Instance.DisplayNextSentence();
             }
