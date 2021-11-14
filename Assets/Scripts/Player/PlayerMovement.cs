@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private bool touchingWalls = false;
     private bool climbed = false;
     private bool fromLeft = false;
+    private bool isClimbing = false;
     private bool isGliding = false;
     private bool startGliding = false;
 
@@ -112,6 +113,16 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
+        if (isClimbing)
+        {
+            var bounds = collider.bounds;
+            var center = new Vector2(bounds.center.x, bounds.center.y);
+
+            var hitInfo = Physics2D.Raycast(center, fromLeft ? Vector2.left : Vector2.right, bounds.extents.y, groundLayer);
+            if (!hitInfo)
+                Invoke(nameof(StopClimbing), 0.05f);
+        }
+
         if (startGliding && !isGliding && rb.velocity.y < -glidingVerticalSpeed)
         {
             wavingFeather.FadeIn();
@@ -174,6 +185,7 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = 0f;
             rb.velocity = climbSpeed * Vector2.up;
             rb.SetRotation(fromLeft ? -90f : 90f);
+            isClimbing = true;
             animationManager.SetSpeed(1);
 
             Invoke(nameof(StopClimbing), climbDistance / climbSpeed);
@@ -182,8 +194,12 @@ public class PlayerMovement : MonoBehaviour
 
     void StopClimbing()
     {
-        rb.gravityScale = previousGravityScale;
-        rb.SetRotation(0f);
+        if (isClimbing)
+        {
+            isClimbing = false;
+            rb.gravityScale = previousGravityScale;
+            rb.SetRotation(0f);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
