@@ -48,6 +48,7 @@ public class DialogueTriggerBunny : MonoBehaviour
     {
         lapineNormal.SetActive(false);
         lapineKiss.SetActive(true);
+        credits.SetActive(true);
         Invoke("EndGame", 5f);
     }
 
@@ -57,6 +58,7 @@ public class DialogueTriggerBunny : MonoBehaviour
     }
     private void TriggerDialogue(Dialogue dialogue)
     {
+        FindObjectOfType<AudioManager>().SwitchMusic();
         DialogueManager.Instance.EndMode = true;
         // Code pour trigger la boite de dialogue avec les param�tres
         DialogueManager.Instance.StartDialogue(dialogue);
