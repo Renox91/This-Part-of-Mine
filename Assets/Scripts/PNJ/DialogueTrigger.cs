@@ -42,7 +42,8 @@ public class DialogueTrigger : MonoBehaviour
                 {
                     //Dialogue de quête finie
                     TriggerDialogue(dialogueEnd);
-                    audioSource.Play();
+                    if(audioSource != null)
+                        audioSource.Play();
                     GetComponent<Quest01>().EndQuest();
                 }
             }

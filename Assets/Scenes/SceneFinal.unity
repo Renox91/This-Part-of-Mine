@@ -308,7 +308,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
@@ -2186,6 +2186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150230990}
     m_Modifications:
+    - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
       value: sous-sol prefab (1)
@@ -2469,6 +2473,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336668007}
     m_Modifications:
+    - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
       value: sous-sol prefab (2)
@@ -2853,7 +2861,7 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "Tu peux d\xE9sormais grimper aux murs. Pour ce faire utilises la touche \u2191
+    - "Tu peux d\xE9sormais grimper aux murs. Pour ce faire utilise la touche \u2191
       lorsque tu es proche d'un mur, ou pousse ton stick vers le haut."
     endEvent:
       m_PersistentCalls:
@@ -3604,11 +3612,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.6
+      value: -16.7
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2760003
+      value: 0.17600024
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4161,7 +4169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0f43d714101a26d488ca898bdcc4fb8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4733,7 +4741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993579040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -84.2837, y: 8.9202585, z: 0.39900494}
+  m_LocalPosition: {x: -89.3837, y: 7.8202586, z: 0.39900494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1606927512}
@@ -5609,6 +5617,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336668007}
     m_Modifications:
+    - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
       value: sous-sol prefab (1)
@@ -6701,11 +6713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.6
+      value: -16.7
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7723,7 +7735,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
@@ -7874,7 +7886,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
@@ -8363,7 +8375,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
@@ -8637,7 +8649,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d2fcfa92efb671648be52180c2c18a2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9841,7 +9853,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
@@ -10660,6 +10672,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1150230990}
     m_Modifications:
+    - target: {fileID: 1626257871617638745, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1702988522660997512, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_Name
       value: sous-sol prefab (2)
@@ -11218,7 +11234,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d2fcfa92efb671648be52180c2c18a2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
