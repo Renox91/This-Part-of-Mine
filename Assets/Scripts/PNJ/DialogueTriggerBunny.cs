@@ -16,6 +16,9 @@ public class DialogueTriggerBunny : MonoBehaviour
 
     [SerializeField] private GameObject credits;
 
+    [SerializeField] private SpriteRenderer spriteRat;
+    [SerializeField] private GameObject RatKiss;
+
     private bool approach;
 
     private void Start()
@@ -32,7 +35,7 @@ public class DialogueTriggerBunny : MonoBehaviour
                 TriggerDialogue(dialogueStart);
                 approach = true;
             }
-            else if (Input.GetButtonDown("Submit"))
+            else if (Input.GetButtonDown("Talk") && approach)
             {
                 DialogueManager.Instance.DisplayNextSentence();
             }
@@ -48,6 +51,8 @@ public class DialogueTriggerBunny : MonoBehaviour
     {
         lapineNormal.SetActive(false);
         lapineKiss.SetActive(true);
+        RatKiss.SetActive(true);
+        spriteRat.enabled = false;
         credits.SetActive(true);
         Invoke("EndGame", 48f);
     }
