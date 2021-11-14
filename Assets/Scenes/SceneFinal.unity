@@ -1119,8 +1119,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - Si le chemin te sembles impossible, la touche espace (ou A sur la manette)
-      te permettra de sauter.
+    - Si le chemin te semble impossible, la touche espace (ou A sur la manette) te
+      permettra de sauter.
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -1513,7 +1513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251516533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 61.35, y: -1.57, z: 44.42002}
+  m_LocalPosition: {x: 57.55, y: -1.57, z: 44.42002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 721695165}
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ee2b9d21896f73f48b8accbafed42556, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c32e71090d83e3e498b2f2710b9b9640, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1651,7 +1651,7 @@ RectTransform:
   m_GameObject: {fileID: 253824855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.0002217, y: 5.0002217, z: 5.0002217}
+  m_LocalScale: {x: 4.5001993, y: 4.5001993, z: 4.5001993}
   m_Children: []
   m_Father: {fileID: 2126074752}
   m_RootOrder: 1
@@ -2757,8 +2757,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "Tu peux d\xE9sormais grimper aux murs. Pour ce faire utilises la touche Z
-      (ou W) lorsque tu es proche d'un mur, ou pousse ton stick vers le haut."
+    - "Tu peux d\xE9sormais grimper aux murs. Pour ce faire utilises la touche \u2191
+      lorsque tu es proche d'un mur, ou pousse ton stick vers le haut."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -3508,11 +3508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.6
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17600024
+      value: -0.13399976
       objectReference: {fileID: 0}
     - target: {fileID: 7303916625268527822, guid: 62424bd39fb0f954295fa4f8a3f72e1e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4637,7 +4637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993579040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -88.2837, y: 7.8202586, z: 0.39900494}
+  m_LocalPosition: {x: -75.7837, y: 7.5102587, z: 0.39900494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1606927512}
@@ -5079,6 +5079,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1035083929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -242.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014619, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_Name
+      value: LucioleParticle (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
 --- !u!1 &1051346783
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,6 +5576,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5720927543231229773, guid: 8029265fc4c52c14c8637822c6587c72, type: 3}
   m_PrefabInstance: {fileID: 1374431084}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1190348537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -145.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.3297043
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014619, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_Name
+      value: LucioleParticle (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
 --- !u!1 &1228754825
 GameObject:
   m_ObjectHideFlags: 0
@@ -5650,8 +5764,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "Bienvenu jeune rat sans queue ! Pour te d\xE9placer, utilise Q (ou A) et D
-      sur le clavier, et le stick gauche sur la manette."
+    - "Bienvenu jeune rat ! Pour te d\xE9placer, utilise \u2192 et \u2190  sur le
+      clavier, et le stick gauche sur la manette."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -6491,11 +6605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.6
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 5252477584641589596, guid: 8db3eaa1768d7de4689368875c260ad3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9170,6 +9284,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8029265fc4c52c14c8637822c6587c72, type: 3}
+--- !u!1001 &1676644447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 45.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014616, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958901326517014619, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
+      propertyPath: m_Name
+      value: LucioleParticle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8a0e07be2e8a7a41b77d7980ba80b5d, type: 3}
 --- !u!1 &1677476221
 GameObject:
   m_ObjectHideFlags: 0
