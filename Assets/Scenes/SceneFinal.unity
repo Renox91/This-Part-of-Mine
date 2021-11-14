@@ -787,7 +787,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - Si le chemin te sembles impossible, la touche espace te permettra de sauter.
+    - Si le chemin te sembles impossible, la touche espace (ou A sur ta manette)
+      te permettra de sauter.
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -967,7 +968,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - 'Il est possible d''interagir avec les autres animaux en appuyant sur E. '
+    - 'Il est possible d''interagir avec les autres animaux en appuyant sur E sur
+      le clavier, ou B sur la manette. '
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -1961,7 +1963,7 @@ MonoBehaviour:
     name: 
     sentences:
     - "Tu peux d\xE9sormais grimper aux murs. Pour ce faire utilises la touche Z
-      lorsque tu es proche d'un mur."
+      (ou W) lorsque tu es proche d'un mur, ou pousse ton stick vers le haut."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -4210,7 +4212,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "Bienvenu jeune rat sans queue ! Pour te d\xE9placer, utilises Z,Q,S,D."
+    - "Bienvenu jeune rat sans queue ! Pour te d\xE9placer, utilise Q (ou A) et D
+      sur le clavier, et le stick gauche sur la manette."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -7129,7 +7132,8 @@ MonoBehaviour:
     name: 
     sentences:
     - "Gr\xE2ce \xE0 la g\xE9n\xE9rosit\xE9 de l'aigle, tu as d\xE9sormais la capacit\xE9
-      de planer ! Reste appuyer sur Espace une fois en l'air pour planer."
+      de planer ! Reste appuy\xE9 sur Espace (ou A sur la manette) une fois en l'air
+      pour planer."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
