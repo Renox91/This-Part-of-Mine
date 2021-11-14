@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private bool climbed = false;
     private bool fromLeft = false;
 
+    private bool isTalkingToBunny = false;
     private static bool canMove = false;
     public static bool CanMove
     {
@@ -68,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (!inAir)
+        if (!inAir && !(isTalkingToBunny))
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
             isJumping = true;
@@ -125,6 +126,20 @@ public class PlayerMovement : MonoBehaviour
         {
             ReleasingWalls();
             lastWallCollider = null;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D zone)
+    {
+        if (zone.tag == "bunny")
+        {
+            canMove = false;
+            if (transform.position.x > -240.72f) 
+            {
+                rb.velocity = new Vector2(-speed/2f,0f);
+                animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+                spriteRenderer.flipX = true;
+            }
         }
     }
 
