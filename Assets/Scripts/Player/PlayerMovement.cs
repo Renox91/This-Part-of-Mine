@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float climbSpeed;
     [SerializeField] private float climbDistance;
+    [SerializeField] private float glidingHorizontalSpeed;
+    [SerializeField] private float glidingVerticalSpeed;
+    [SerializeField] private WavingFeather wavingFeather;
 
     private List<ContactPoint2D> contactList;
 
@@ -28,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     private bool touchingWalls = false;
     private bool climbed = false;
     private bool fromLeft = false;
+    private bool isGliding = false;
+    private bool startGliding = false;
 
     private float previousGravityScale;
     private bool isOnIce;
@@ -47,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public static bool CanClimb { get; set; } = false;
+    public static bool CanGlide { get; set; } = false;
 
     private Rigidbody2D rb;
     // Start is called before the a first frame update
@@ -66,7 +72,9 @@ public class PlayerMovement : MonoBehaviour
         if (canMove)
         {
             float acceleration;
-            float targetHorSpeed = move * speed;
+
+            float topSpeed = isGliding ? glidingHorizontalSpeed : speed;
+            float targetHorSpeed = move * topSpeed;
             var vel = rb.velocity;
 
             if (Mathf.Abs(targetHorSpeed) < 0.0625f)
@@ -83,10 +91,13 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = vel;
             else
                 rb.velocity = new Vector2(move * speed, rb.velocity.y);
+
+            var scale = transform.localScale;
             if (rb.velocity.x < 0)
-                spriteRenderer.flipX = true;
+                scale.x = -Mathf.Abs(scale.x);
             else if (rb.velocity.x > 0)
-                spriteRenderer.flipX = false;
+                scale.x = Mathf.Abs(scale.x);
+            transform.localScale = scale;
             animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
         }
         else
@@ -94,35 +105,65 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        if (isTalkingToBunny)
+        if (startGliding && !isGliding && rb.velocity.y < -glidingVerticalSpeed)
+        {
+            wavingFeather.FadeIn();
+            isGliding = true;
+            startGliding = false;
+            previousGravityScale = rb.gravityScale;
+            rb.gravityScale = 0f;
+            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * glidingHorizontalSpeed, -glidingVerticalSpeed);
+        }
+
+        if (isTalkingToBunny) // Really?
         {
             if (transform.position.x > -240.72f) 
             {
-                rb.velocity = new Vector2(-speed/2f,0f);
+                rb.velocity = new Vector2(-speed/2f, rb.velocity.y);
                 animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
                 spriteRenderer.flipX = true;
             }
             else 
             {
-                rb.velocity = new Vector2(0f,0f);
+                rb.velocity = new Vector2(0f, rb.velocity.y);
                 animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
             }
         }
     }
 
-    public void Jump()
+    public void JumpOrGlide()
     {
-        if (!inAir && !(isTalkingToBunny))
+        if (!isTalkingToBunny)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
-            isJumping = true;
-            inAir = true;
+            if (!inAir)
+            {
+                rb.AddForce(new Vector2(0f, jump));
+                isJumping = true;
+                inAir = true;
+            }
+            
+            if (CanGlide)
+            {
+                startGliding = true;
+            }
+        }
+    }
+
+    public void StopGliding()
+    {
+        if (startGliding) startGliding = false;
+
+        if (isGliding)
+        {
+            wavingFeather.FadeOut();
+            isGliding = false;
+            rb.gravityScale = previousGravityScale;
         }
     }
 
     public void TryClimbing()
     {
-        if (CanClimb && touchingWalls && inAir && !climbed)
+        if (CanClimb && touchingWalls && inAir && !isGliding && !climbed)
         {
             climbed = true;
             previousGravityScale = rb.gravityScale;
