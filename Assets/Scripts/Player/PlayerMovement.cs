@@ -188,7 +188,7 @@ public class PlayerMovement : MonoBehaviour
                 TouchedWalls();
                 fromLeft = Mathf.Sign(contactList[i].normal.x) == 1f;
             }
-            else
+            else if (contactList[i].normal.y > 0)
             {
                 lastGroundCollider = collision.collider;
                 TouchedGround();
