@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3260250541363252487}
   - component: {fileID: 3260250541363252481}
-  - component: {fileID: 6710769433380303622}
   m_Layer: 6
   m_Name: ChampiRouge
   m_TagString: Untagged
@@ -25,9 +24,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3260250541363252484}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 51.6, y: -8.3, z: 876.75525}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.64, y: 1.64, z: 0.82}
   m_Children:
   - {fileID: 990333817175508790}
   - {fileID: 3945212257050296200}
@@ -85,19 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6710769433380303622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3260250541363252484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49da38106abd1974a876a906935fe4a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bouncePower: 1000
 --- !u!1 &3722714720029964884
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +177,7 @@ GameObject:
   - component: {fileID: 3945212257050296200}
   - component: {fileID: 5461295819425069013}
   - component: {fileID: 5190887310604837365}
+  - component: {fileID: 719078798}
   m_Layer: 6
   m_Name: Chapeau_Champi_Rouge
   m_TagString: Ground
@@ -317,3 +304,16 @@ PolygonCollider2D:
       - {x: -2.536869, y: -2.9775815}
       - {x: -2.1754231, y: -2.9863317}
       - {x: -1.7358067, y: -2.9678984}
+--- !u!114 &719078798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039823379662668293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49da38106abd1974a876a906935fe4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bouncePower: 1000
