@@ -1,97 +1,158 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float jump;
-    [SerializeField] private bool isJumping = false;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float climbSpeed;
+    [SerializeField] private float climbDistance;
+
+    private List<ContactPoint2D> contactList;
+
+    private new BoxCollider2D collider;
+    private Collider2D lastGroundCollider;
+    private Collider2D lastWallCollider;
+
     private AnimationManager animationManager;
     private SpriteRenderer spriteRenderer;
-    private new BoxCollider2D collider;
 
-    [SerializeField] private static bool canMove = true;
+    private bool isJumping = false;
+    private bool inAir = false;
+    private bool touchingWalls = false;
+    private bool climbed = false;
+    private bool fromLeft = false;
+
+    private static bool canMove = false;
     public static bool CanMove
     {
         get { return canMove; }
-        set { canMove = value; }
+        set { canMove = value; if (!canMove) move = 0f; }
     }
 
     private static float move;
     public static float Move
     {
-        get { return move; }
-        set
-        {
-            if (canMove)
-            { move = value; }
-        }
+        get { return canMove ? move : 0f; }
+        set { move = value; }
     }
 
+    public static bool CanClimb { get; set; } = false;
+
     private Rigidbody2D rb;
-    // Start is called before the first frame update
+    // Start is called before the a first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animationManager = GetComponent<AnimationManager>();
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
+        contactList = new List<ContactPoint2D>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        CheckGroundRotation();
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
+
         if (rb.velocity.x < 0)
-        {
             spriteRenderer.flipX = true;
-        }
         else if (rb.velocity.x > 0)
-        {
             spriteRenderer.flipX = false;
-        }
+
         animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
     }
 
     public void Jump()
     {
-        if(!isJumping)
+        if (!inAir)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
             isJumping = true;
+            inAir = true;
         }
     }
 
-    private void CheckGroundRotation()
+    public void TryClimbing()
     {
-        var bounds = collider.bounds;
-        var checkGroundDistance = Mathf.Abs(bounds.min.y - bounds.center.y) + 0.1f;
-
-        // Cast a ray straight down.
-        RaycastHit2D hit1 = Physics2D.Raycast(new Vector3(bounds.min.x, bounds.center.y, 0f), Vector2.down, checkGroundDistance, groundLayer);
-        RaycastHit2D hit2 = Physics2D.Raycast(new Vector3(bounds.max.x, bounds.center.y, 0f), Vector2.down, checkGroundDistance, groundLayer);
-
-        // If it hits something...
-        if (hit1.collider != null)
+        if (CanClimb && touchingWalls && inAir && !climbed)
         {
-            animationManager.SetJump(false);
-            isJumping = false;
-            //transform.rotation = Quaternion.EulerAngles(0, 0, (Mathf.Atan2(hit1.normal.y, hit1.normal.x) * Mathf.Rad2Deg));
+            climbed = true;
+            rb.gravityScale = 0f;
+            rb.velocity = climbSpeed * Vector2.up;
+            rb.SetRotation(fromLeft ? -90f : 90f);
+            Invoke(nameof(StopClimbing), climbDistance / climbSpeed);
         }
-        else if (hit2.collider != null)
-        {
-            isJumping = false;
-            animationManager.SetJump(false);
-            //transform.rotation = Quaternion.EulerAngles(0, 0, (Mathf.Atan2(hit2.normal.y, hit2.normal.x) * Mathf.Rad2Deg));
-        }
-        else
-        {
-            animationManager.SetJump(true);
-            isJumping = true;
-        }
+    }
 
+    void StopClimbing()
+    {
+        rb.gravityScale = 1f;
+        rb.SetRotation(0f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var numContacts = collision.GetContacts(contactList);
+
+        for (int i = 0; i < numContacts; i++)
+        {
+            if (contactList[i].normal.y == 0) // totally horizontal normal
+            {
+                lastWallCollider = collision.collider;
+                TouchedWalls();
+                fromLeft = Mathf.Sign(contactList[i].normal.x) == 1f;
+            }
+            else
+            {
+                lastGroundCollider = collision.collider;
+                TouchedGround();
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider == lastGroundCollider)
+        {
+            LeavingGround();
+            lastGroundCollider = null;
+        }
+        else if (collision.collider == lastWallCollider)
+        {
+            ReleasingWalls();
+            lastWallCollider = null;
+        }
+    }
+
+    void TouchedGround()
+    {
+        Debug.Log("Touched ground");
+        animationManager.SetJump(false);
+        inAir = false;
+        isJumping = false;
+        climbed = false;
+    }
+
+    void LeavingGround()
+    {
+        Debug.Log("Leaving ground");
+        animationManager.SetJump(true);
+        inAir = true;
+    }
+
+    void TouchedWalls()
+    {
+        Debug.Log("Touched walls");
+        touchingWalls = true;
+    }
+
+    void ReleasingWalls()
+    {
+        Debug.Log("Releasing walls");
+        touchingWalls = false;
     }
 }

@@ -16,9 +16,11 @@ public class PlayerInputController : MonoBehaviour
     void Update()
     {
         PlayerMovement.Move = Input.GetAxis("Horizontal");
+
         if (Input.GetButtonDown("Jump"))
-        {
             playerMovement.Jump();
-        }
+
+        if (Input.GetAxis("Vertical") > 0.5f)
+            playerMovement.TryClimbing();
     }
 }
