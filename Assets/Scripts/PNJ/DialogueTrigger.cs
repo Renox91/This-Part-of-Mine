@@ -38,7 +38,7 @@ public class DialogueTrigger : MonoBehaviour
                     GetComponent<Quest01>().EndQuest();
                 }
             }
-            else if (isTalking && Input.GetButtonDown("Submit"))
+            else if (isTalking && Input.GetButtonDown("Talk"))
             {
                 DialogueManager.Instance.DisplayNextSentence();
             }

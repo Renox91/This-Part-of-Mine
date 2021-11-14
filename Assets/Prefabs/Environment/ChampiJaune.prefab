@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3945212257050296200}
   - component: {fileID: 5461295819425069013}
-  - component: {fileID: 5190887310604837365}
+  - component: {fileID: 8234741052071686924}
   m_Layer: 6
   m_Name: Chapeau_Champi_Jaune
   m_TagString: Ground
@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7039823379662668293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -103.30802}
+  m_LocalPosition: {x: -2.15, y: -2.73, z: -103.30802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3260250541363252487}
@@ -249,8 +249,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5190887310604837365
-PolygonCollider2D:
+--- !u!61 &8234741052071686924
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -262,44 +262,16 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.010022163, y: -0.040086985}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 30.011398, y: 10.8}
+    oldSize: {x: 3.24, y: 0.78}
     newSize: {x: 30.011398, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -1.4825706, y: -2.9494271}
-      - {x: -1.1902933, y: -2.9532444}
-      - {x: -0.9960092, y: -2.9603398}
-      - {x: -0.80172884, y: -2.897945}
-      - {x: -0.5128901, y: -2.6597016}
-      - {x: -0.5455134, y: -2.5973063}
-      - {x: -0.6394932, y: -2.534645}
-      - {x: -0.74342346, y: -2.488155}
-      - {x: -0.8886094, y: -2.4146738}
-      - {x: -1.1241169, y: -2.3330712}
-      - {x: -1.4214383, y: -2.2962053}
-      - {x: -1.67765, y: -2.2595417}
-      - {x: -1.8860741, y: -2.2518482}
-      - {x: -2.0530243, y: -2.2460957}
-      - {x: -2.4340653, y: -2.2329662}
-      - {x: -2.7683957, y: -2.2744813}
-      - {x: -2.9057338, y: -2.2999845}
-      - {x: -3.3473015, y: -2.465455}
-      - {x: -3.5320778, y: -2.4980447}
-      - {x: -3.7339184, y: -2.6847677}
-      - {x: -3.8100407, y: -2.7769337}
-      - {x: -3.7443273, y: -2.8246748}
-      - {x: -3.62378, y: -2.8799744}
-      - {x: -3.5131786, y: -2.9678984}
-      - {x: -3.4687574, y: -2.9863315}
-      - {x: -3.3427353, y: -2.9825106}
-      - {x: -2.536869, y: -2.9775815}
-      - {x: -2.1754231, y: -2.9863317}
-      - {x: -1.7358067, y: -2.9678984}
+  serializedVersion: 2
+  m_Size: {x: 2.9393482, y: 0.6196523}
+  m_EdgeRadius: 0
