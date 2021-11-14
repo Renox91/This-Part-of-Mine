@@ -116,14 +116,14 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * glidingHorizontalSpeed, -glidingVerticalSpeed);
         }
 
-        if (isTalkingToBunny) // Really?
+        if (isTalkingToBunny) 
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             if (transform.position.x > -240.72f) 
             {
                 rb.velocity = new Vector2(-speed/2f, rb.velocity.y);
                 animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
-            }
+            }else animationManager.SetSpeed(0f);
         }
     }
 
