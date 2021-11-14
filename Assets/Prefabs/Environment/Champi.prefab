@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9135984110915487829}
   - component: {fileID: 271296922368393224}
-  m_Layer: 0
+  - component: {fileID: 896930710}
+  m_Layer: 6
   m_Name: Chapeau_Champi_Jaune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3007215504118805976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -103.30802}
+  m_LocalPosition: {x: 0, y: -0.15, z: -103.30802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7293298232564628186}
@@ -82,6 +83,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &896930710
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007215504118805976}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 9a1829c707c8c0f4ca1aa9cfe8dac9c9, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 30.011398, y: 10.8}
+    newSize: {x: 30.011398, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.1576662, y: -2.9967437}
+      - {x: -0.9525102, y: -2.9820895}
+      - {x: -0.74735415, y: -2.9088197}
+      - {x: -0.5128901, y: -2.6597016}
+      - {x: -0.5128901, y: -2.5864315}
+      - {x: -0.6008141, y: -2.4838536}
+      - {x: -0.8499322, y: -2.3373134}
+      - {x: -1.0697422, y: -2.2786975}
+      - {x: -1.4214383, y: -2.2200816}
+      - {x: -1.6559024, y: -2.1761196}
+      - {x: -2.4618726, y: -2.1761196}
+      - {x: -2.7402985, y: -2.1907735}
+      - {x: -2.9601085, y: -2.2347355}
+      - {x: -3.5755768, y: -2.4545455}
+      - {x: -3.8100407, y: -2.6303935}
+      - {x: -3.8100407, y: -2.7769337}
+      - {x: -3.7660787, y: -2.8355496}
+      - {x: -3.6781547, y: -2.9234736}
+      - {x: -3.5023067, y: -3.0113976}
+      - {x: -3.4143827, y: -3.0407057}
+      - {x: -2.1101766, y: -3.0407057}
+      - {x: -1.6705563, y: -3.0113976}
 --- !u!1 &7293298232564628185
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +140,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7293298232564628186}
   - component: {fileID: 7293298232564628188}
-  - component: {fileID: 7293298232564628187}
   m_Layer: 6
   m_Name: Champi
   m_TagString: Untagged
@@ -167,32 +214,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7293298232564628187
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293298232564628185}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 9a1829c707c8c0f4ca1aa9cfe8dac9c9, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2.1620655, y: -2.6142006}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.25, y: 2.59}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.2309341, y: 0.82215405}
-  m_EdgeRadius: 0
 --- !u!1 &8908122063248821641
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,8 +239,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8908122063248821641}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -103.30802}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.7, z: -103.30802}
+  m_LocalScale: {x: 1, y: 1.94, z: 1}
   m_Children: []
   m_Father: {fileID: 7293298232564628186}
   m_RootOrder: 0

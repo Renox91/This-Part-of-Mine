@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private bool climbed = false;
     private bool fromLeft = false;
 
+    private bool isTalkingToBunny = false;
     private static bool canMove = false;
     public static bool CanMove
     {
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         set { move = value; }
     }
 
-    public static bool CanClimb { get; set; } = false;
+    public static bool CanClimb { get; set; } = true;
 
     private Rigidbody2D rb;
     // Start is called before the a first frame update
@@ -54,39 +55,57 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         contactList = new List<ContactPoint2D>();
+        canMove = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float acceleration;
-        float targetHorSpeed = move * speed;
-        var vel = rb.velocity;
+        if (canMove)
+        {
+            float acceleration;
+            float targetHorSpeed = move * speed;
+            var vel = rb.velocity;
 
-        if (Mathf.Abs(targetHorSpeed) < 0.0625f)
-            acceleration = stopDeceleration;
-        else if (targetHorSpeed * vel.x < 0f)
-            acceleration = turnDeceleration;
-        else acceleration = this.acceleration;
+            if (Mathf.Abs(targetHorSpeed) < 0.0625f)
+                acceleration = stopDeceleration;
+            else if (targetHorSpeed * vel.x < 0f)
+                acceleration = turnDeceleration;
+            else acceleration = this.acceleration;
 
-        if (vel.x < targetHorSpeed)
-            vel.x = Mathf.Min(vel.x + acceleration * Time.fixedDeltaTime, targetHorSpeed);
-        else if (vel.x > targetHorSpeed)
-            vel.x = Mathf.Max(vel.x - acceleration * Time.fixedDeltaTime, targetHorSpeed);
+            if (vel.x < targetHorSpeed)
+                vel.x = Mathf.Min(vel.x + acceleration * Time.fixedDeltaTime, targetHorSpeed);
+            else if (vel.x > targetHorSpeed)
+                vel.x = Mathf.Max(vel.x - acceleration * Time.fixedDeltaTime, targetHorSpeed);
 
-        rb.velocity = vel;
+            rb.velocity = vel;
 
-        if (rb.velocity.x < 0)
-            spriteRenderer.flipX = true;
-        else if (rb.velocity.x > 0)
-            spriteRenderer.flipX = false;
+            if (rb.velocity.x < 0)
+                spriteRenderer.flipX = true;
+            else if (rb.velocity.x > 0)
+                spriteRenderer.flipX = false;
 
-        animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+            animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+        }
+
+        if (isTalkingToBunny)
+        {
+            if (transform.position.x > -240.72f) 
+            {
+                rb.velocity = new Vector2(-speed/2f,0f);
+                animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+                spriteRenderer.flipX = true;
+            }else 
+            {
+                rb.velocity = new Vector2(0f,0f);
+                animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+            }
+        }
     }
 
     public void Jump()
     {
-        if (!inAir)
+        if (!inAir && !(isTalkingToBunny))
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump));
             isJumping = true;
@@ -143,6 +162,16 @@ public class PlayerMovement : MonoBehaviour
         {
             ReleasingWalls();
             lastWallCollider = null;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D zone)
+    {
+        
+        if (zone.tag == "bunny")
+        {
+            canMove = false;
+            isTalkingToBunny = true;
         }
     }
 
