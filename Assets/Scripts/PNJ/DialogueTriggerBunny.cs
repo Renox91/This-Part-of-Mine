@@ -33,24 +33,9 @@ public class DialogueTriggerBunny : MonoBehaviour
             }
             else if(Input.GetKeyDown(KeyCode.E))
             {
-                Ecount ++;
                 DialogueManager.Instance.DisplayNextSentence();
-                if (Ecount == 3)
-                {
-                    lapineTriste.SetActive(false);
-                    lapineNormal.SetActive(true);
-                }
-                if (Ecount == 6)
-                {
-                    lapineNormal.SetActive(false);
-                    lapineKiss.SetActive(true);
-                    credits.SetActive(true);
-                }
             }
-
         }
-
-
     }
     public void SadLapine()
     {
