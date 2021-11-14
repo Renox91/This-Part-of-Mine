@@ -143,6 +143,10 @@ public class PlayerMovement : MonoBehaviour
             }
             else animationManager.SetSpeed(0f);
         }
+        if (transform.position.y > 10)
+        {
+            rb.gravityScale = 2.0f;
+        }
     }
 
     public void JumpOrGlide()
