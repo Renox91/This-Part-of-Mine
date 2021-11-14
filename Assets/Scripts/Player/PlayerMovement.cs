@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         set { move = value; }
     }
 
-    public static bool CanClimb { get; set; } = true;
+    public static bool CanClimb { get; set; } = false;
     public static bool CanGlide { get; set; } = false;
     public bool IsOnIce { get => isOnIce; set => isOnIce = value; }
 
