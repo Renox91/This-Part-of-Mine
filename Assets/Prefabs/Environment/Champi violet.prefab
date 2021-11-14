@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6096282314198687170}
   - component: {fileID: 2994900688147371423}
-  - component: {fileID: 8520799153037166768}
+  - component: {fileID: 1924847949482142279}
   m_Layer: 6
   m_Name: Chapeau_Champi_Violet
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281501100966174799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -103.30802}
+  m_LocalPosition: {x: -2.11, y: -2.68, z: -103.30802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5720927543231229773}
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &8520799153037166768
-PolygonCollider2D:
+--- !u!61 &1924847949482142279
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,40 +96,19 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010955811, y: -0.054771304}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 30.011398, y: 10.8}
+    oldSize: {x: 3.24, y: 0.78}
     newSize: {x: 30.011398, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -1.1576662, y: -2.9967437}
-      - {x: -0.9525102, y: -2.9820895}
-      - {x: -0.74735415, y: -2.9088197}
-      - {x: -0.5128901, y: -2.6597016}
-      - {x: -0.5128901, y: -2.5864315}
-      - {x: -0.6008141, y: -2.4838536}
-      - {x: -0.8499322, y: -2.3373134}
-      - {x: -1.0697422, y: -2.2786975}
-      - {x: -1.4214383, y: -2.2200816}
-      - {x: -1.6559024, y: -2.1761196}
-      - {x: -2.4618726, y: -2.1761196}
-      - {x: -2.7402985, y: -2.1907735}
-      - {x: -2.9601085, y: -2.2347355}
-      - {x: -3.5755768, y: -2.4545455}
-      - {x: -3.8100407, y: -2.6303935}
-      - {x: -3.8100407, y: -2.7769337}
-      - {x: -3.7660787, y: -2.8355496}
-      - {x: -3.6781547, y: -2.9234736}
-      - {x: -3.5023067, y: -3.0113976}
-      - {x: -3.4143827, y: -3.0407057}
-      - {x: -2.1101766, y: -3.0407057}
-      - {x: -1.6705563, y: -3.0113976}
+  serializedVersion: 2
+  m_Size: {x: 2.6046448, y: 0.539006}
+  m_EdgeRadius: 0
 --- !u!1 &5720927543231229774
 GameObject:
   m_ObjectHideFlags: 0
