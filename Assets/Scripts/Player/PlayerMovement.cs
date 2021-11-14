@@ -52,12 +52,16 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         contactList = new List<ContactPoint2D>();
+        canMove = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(move * speed, rb.velocity.y);
+
+        if (canMove)
+        {
+            rb.velocity = new Vector2(move * speed, rb.velocity.y);
 
         if (rb.velocity.x < 0)
             spriteRenderer.flipX = true;
@@ -65,6 +69,21 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = false;
 
         animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+        }
+
+        if (isTalkingToBunny)
+        {
+            if (transform.position.x > -240.72f) 
+            {
+                rb.velocity = new Vector2(-speed/2f,0f);
+                animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+                spriteRenderer.flipX = true;
+            }else 
+            {
+                rb.velocity = new Vector2(0f,0f);
+                animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+            }
+        }
     }
 
     public void Jump()
@@ -131,15 +150,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D zone)
     {
+        
         if (zone.tag == "bunny")
         {
             canMove = false;
-            if (transform.position.x > -240.72f) 
-            {
-                rb.velocity = new Vector2(-speed/2f,0f);
-                animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
-                spriteRenderer.flipX = true;
-            }
+            isTalkingToBunny = true;
         }
     }
 
