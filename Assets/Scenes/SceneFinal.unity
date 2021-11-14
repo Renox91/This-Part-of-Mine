@@ -9809,7 +9809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 308556879589420280, guid: 8e1a9b708e83b87438ea78b2291aea0b, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3729885061959763806, guid: 8e1a9b708e83b87438ea78b2291aea0b, type: 3}
       propertyPath: m_DrawMode
@@ -9817,7 +9817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3729885061959763806, guid: 8e1a9b708e83b87438ea78b2291aea0b, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3735231346992646789, guid: 8e1a9b708e83b87438ea78b2291aea0b, type: 3}
       propertyPath: m_LocalScale.x
