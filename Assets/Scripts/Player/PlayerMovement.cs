@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private bool fromLeft = false;
 
     private float previousGravityScale;
-
+    private bool isOnIce;
     private bool isTalkingToBunny = false;
     private static bool canMove = false;
     public static bool CanMove
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         set { move = value; }
     }
 
-    public static bool CanClimb { get; set; } = true;
+    public static bool CanClimb { get; set; } = false;
 
     private Rigidbody2D rb;
     // Start is called before the a first frame update
@@ -79,15 +79,19 @@ public class PlayerMovement : MonoBehaviour
                 vel.x = Mathf.Min(vel.x + acceleration * Time.fixedDeltaTime, targetHorSpeed);
             else if (vel.x > targetHorSpeed)
                 vel.x = Mathf.Max(vel.x - acceleration * Time.fixedDeltaTime, targetHorSpeed);
-
-            rb.velocity = vel;
-
+            if (isOnIce)
+                rb.velocity = vel;
+            else
+                rb.velocity = new Vector2(move * speed, rb.velocity.y);
             if (rb.velocity.x < 0)
                 spriteRenderer.flipX = true;
             else if (rb.velocity.x > 0)
                 spriteRenderer.flipX = false;
-
             animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
         }
 
         if (isTalkingToBunny)
@@ -97,7 +101,8 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(-speed/2f,0f);
                 animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
                 spriteRenderer.flipX = true;
-            }else 
+            }
+            else 
             {
                 rb.velocity = new Vector2(0f,0f);
                 animationManager.SetSpeed(Mathf.Abs(rb.velocity.x));
@@ -170,7 +175,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D zone)
     {
-        
         if (zone.tag == "bunny")
         {
             canMove = false;
@@ -180,7 +184,6 @@ public class PlayerMovement : MonoBehaviour
 
     void TouchedGround()
     {
-        Debug.Log("Touched ground");
         animationManager.SetJump(false);
         inAir = false;
         isJumping = false;
@@ -189,20 +192,17 @@ public class PlayerMovement : MonoBehaviour
 
     void LeavingGround()
     {
-        Debug.Log("Leaving ground");
         animationManager.SetJump(true);
         inAir = true;
     }
 
     void TouchedWalls()
     {
-        Debug.Log("Touched walls");
         touchingWalls = true;
     }
 
     void ReleasingWalls()
     {
-        Debug.Log("Releasing walls");
         touchingWalls = false;
     }
 }

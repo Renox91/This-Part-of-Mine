@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-    private UnityEvent endEvent;
+    //private UnityEvent endEvent;
     
     private void Awake()
     {
@@ -39,8 +39,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        PlayerMovement.Move = 0;
         PlayerMovement.CanMove = false;
+        PlayerMovement.Move = 0;
         DialogueTrigger.IsTalking = true;
 
         animator.SetBool("IsOpen", true);
@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
 
         sentences.Clear();
 
-        endEvent = dialogue.endEvent;
+        //endEvent = dialogue.endEvent;
 
         foreach(string sentence in dialogue.sentences)
         {
@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
-            endEvent.Invoke();
+            //endEvent.Invoke();
             return;
         }
 

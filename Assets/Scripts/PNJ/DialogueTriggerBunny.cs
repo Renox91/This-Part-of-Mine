@@ -23,7 +23,6 @@ public class DialogueTriggerBunny : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(transform.position.x);
         if (transform.position.x < -240f)
         {
             if ( Ecount == 0 )
