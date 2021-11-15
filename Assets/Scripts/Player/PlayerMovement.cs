@@ -26,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
     private AnimationManager animationManager;
     private SpriteRenderer spriteRenderer;
 
-    private bool isJumping = false;
-    private bool inAir = false;
+    private bool isJumping = true;
+    private bool inAir = true;
     private bool touchingWalls = false;
     private bool climbed = false;
     private bool fromLeft = false;
@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool CanClimb { get; set; } = false;
     public static bool CanGlide { get; set; } = false;
     public bool IsOnIce { get => isOnIce; set => isOnIce = value; }
+    public bool IsJumping { get => isJumping; set => isJumping = value; }
 
     private Rigidbody2D rb;
     // Start is called before the a first frame update
@@ -143,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else animationManager.SetSpeed(0f);
         }
-        if (transform.position.y > 10)
+        if (rb.velocity.y > 0 && !isClimbing)
         {
             rb.gravityScale = 2.0f;
         }
@@ -230,6 +231,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        var numContacts = collision.GetContacts(contactList);
+
+        for (int i = 0; i < numContacts; i++)
+        {
+            if (contactList[i].normal.y > 0 && !collision.collider.CompareTag("ChampignonRouge"))
+            {
+                inAir = false;
+                isJumping = false;
+                climbed = false;
+            }
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider == lastGroundCollider)
@@ -256,9 +272,6 @@ public class PlayerMovement : MonoBehaviour
     void TouchedGround()
     {
         animationManager.SetJump(false);
-        inAir = false;
-        isJumping = false;
-        climbed = false;
         audioSource.Play();
         Debug.Log("Touching ground");
     }

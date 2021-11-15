@@ -16,7 +16,8 @@ public class Bouncing : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             Debug.Log("Collision champi");
-            coll.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bouncePower));
+            if (coll.gameObject.GetComponent<Rigidbody2D>().velocity.y < 5)
+                coll.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bouncePower));
         }
     }
 }

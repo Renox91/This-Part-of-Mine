@@ -12,7 +12,7 @@ public class QuestTrigger : MonoBehaviour
             DialogueManager.Instance.StartDialogueInfo(dialogue);
             gameObject.GetComponentInParent<Quest>().QuestIsFinished = true;
             gameObject.SetActive(false);
-            Invoke("StopInfo", 5f);
+            Invoke("StopInfo", 2.5f);
         }
     }
 

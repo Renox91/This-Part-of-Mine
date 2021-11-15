@@ -53,6 +53,11 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
 
+        DisableZoomPNG();
+    }
+
+    public void DisableZoomPNG()
+    {
         if (!isTalking && cinemachineSwitcher.isCutSceneOn)
         {
             cinemachineSwitcher.StopScene(boolTagScene);
