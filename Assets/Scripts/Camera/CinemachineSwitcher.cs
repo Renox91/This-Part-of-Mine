@@ -6,7 +6,8 @@ public class CinemachineSwitcher : MonoBehaviour
 {
     private Animator animator;
     public bool isCutSceneOn;
-    
+    private bool tmpCutScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +23,13 @@ public class CinemachineSwitcher : MonoBehaviour
     {
         animator.SetBool(boolTag, true);
         isCutSceneOn = true;
+        tmpCutScene = true;
     }
 
     public void StopScene(string boolTag)
     {
         animator.SetBool(boolTag, false);
-        isCutSceneOn = false;
+        tmpCutScene = false;
     }
 
     public void StartFixeScene(string boolTag)
@@ -38,5 +40,9 @@ public class CinemachineSwitcher : MonoBehaviour
     public void StopFixeScene(string boolTag)
     {
         animator.SetBool(boolTag, false);
+    }
+    public void UpdateCutSceneState()
+    {
+        isCutSceneOn = tmpCutScene;
     }
 }

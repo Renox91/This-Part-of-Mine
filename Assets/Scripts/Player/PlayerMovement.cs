@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animationManager = GetComponent<AnimationManager>();
         rb = GetComponent<Rigidbody2D>();
+        previousGravityScale = rb.gravityScale;
         collider = GetComponent<BoxCollider2D>();
         contactList = new List<ContactPoint2D>();
         canMove = true;
@@ -112,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.velocity = Vector2.zero;
+            animationManager.SetSpeed(0f);
         }
 
         if (isClimbing)
@@ -184,6 +186,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CanClimb && touchingWalls && !isGliding && !climbed)
         {
+            CanClimb = false;
             animationManager.SetJump(false);
             climbed = true;
             previousGravityScale = rb.gravityScale;
@@ -199,8 +202,10 @@ public class PlayerMovement : MonoBehaviour
 
     void StopClimbing()
     {
+        Debug.Log("stop climbing");
         if (isClimbing)
         {
+            CanClimb = true;
             isClimbing = false;
             rb.gravityScale = previousGravityScale;
             rb.SetRotation(0f);
