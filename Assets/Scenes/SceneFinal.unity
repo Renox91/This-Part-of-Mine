@@ -6793,7 +6793,7 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "Bienvenu jeune rat ! Pour te d\xE9placer, utilise \u2192 et \u2190  sur le
+    - "Bienvenue jeune rat ! Pour te d\xE9placer, utilise \u2192 et \u2190  sur le
       clavier, et le stick gauche sur la manette."
     endEvent:
       m_PersistentCalls:
@@ -6807,7 +6807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232551106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.65, y: 1.7, z: 44.42002}
+  m_LocalPosition: {x: -39.49, y: 1.7, z: 44.42002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 721695165}
@@ -7156,7 +7156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293298232564628186, guid: 2a81028aa48672d43b6886d8eb58d9fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.97
+      value: 10.58
       objectReference: {fileID: 0}
     - target: {fileID: 7293298232564628186, guid: 2a81028aa48672d43b6886d8eb58d9fc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11328,9 +11328,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "Gr\xE2ce \xE0 la g\xE9n\xE9rosit\xE9 de l'aigle, tu as d\xE9sormais la capacit\xE9
-      de planer ! Reste appuy\xE9 sur Espace (ou A sur la manette) une fois en l'air
-      pour planer."
+    - "Gr\xE2ce au cadeau du gypaete, tu as d\xE9sormais la capacit\xE9 de planer
+      ! Reste appuy\xE9 sur Espace (ou A sur la manette) une fois en l'air pour planer."
     endEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -11873,11 +11872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2431628305790516125, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.38481
+      value: 40.391
       objectReference: {fileID: 0}
     - target: {fileID: 2431628305790516125, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.64
+      value: 4.176
       objectReference: {fileID: 0}
     - target: {fileID: 2431628305790516125, guid: 66185256ca5a9474ab5347b81b0da7d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12835,6 +12834,10 @@ PrefabInstance:
     - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
       propertyPath: boolTagScene
       value: AigleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
+      propertyPath: dialogueStart.name
+      value: Gypaete
       objectReference: {fileID: 0}
     - target: {fileID: 7042439975365373265, guid: c816c93cb7e3e064a93d53fdb7621de6, type: 3}
       propertyPath: cinemachineSwitcher
