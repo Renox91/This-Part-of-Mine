@@ -59,6 +59,8 @@ public class DialogueTriggerBunny : MonoBehaviour
 
     public void EndGame()
     {
+        PlayerMovement.CanClimb = false;
+        PlayerMovement.CanGlide = false;
         SceneManager.LoadScene(0);
     }
 
